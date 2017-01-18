@@ -1,0 +1,36 @@
+<div class="container page-content">
+  <div class="row">
+    <div class-"span12">
+      <div class="box-container">
+        <div style="margin-left: auto; margin-right: auto; width: 20em" ><br />
+          <h2 class="page-title">Add portfolio</h2>
+
+          <%= simple_form_for(@portfolio) do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+
+            <%= f.label :description %>
+            <%= f.text_area :description %>
+
+            <br />
+
+            <%= f.label :category %>
+            <%= f.select :category_id, Category.all.map{ |f| [f.name, f.id] } %>
+
+            <%= f.label :link %>
+            <%= f.text_field :link %>
+
+            <br />
+            
+            <%= f.file_field :image %>
+
+            <br />
+
+            <%= f.submit "Opret", class: "btn span3 btn-realto-form btn-large" %>
+          <% end %>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

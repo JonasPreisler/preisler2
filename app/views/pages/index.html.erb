@@ -1,0 +1,91 @@
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="pre-container">
+            <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- end Preloader -->
+
+    <div class="">
+
+        <!-- nav -->
+        <nav>
+            <ul class="box-primary-nav">
+                <li class="box-label">About me</li>
+
+                <li><a href="index.html">Intro</a> <i class="ion-ios-circle-filled color"></i></li>
+                <li><%= link_to 'About me', about_path %></li>
+                <li><a href="services.html">services</a></li>
+                <li><a href="portfolio.html">portfolio</a></li>
+                <li><a href="contact.html">contact me</a></li>
+
+
+
+                <li class="box-label">Follow me</li>
+
+                <li class="box-social"><a href="#0"><i class="ion-social-facebook"></i></a></li>
+                <li class="box-social"><a href="#0"><i class="ion-social-instagram-outline"></i></a></li>
+                <li class="box-social"><a href="#0"><i class="ion-social-twitter"></i></a></li>
+                <li class="box-social"><a href="#0"><i class="ion-social-dribbble"></i></a></li>
+            </ul>
+        </nav>
+        <!-- end nav -->
+        <%= render 'layouts/header' %>
+        <!-- box-intro -->
+        <section class="box-intro">
+            <div class="table-cell">
+                <h1 class="box-headline letters rotate-2">
+                    <span class="box-words-wrapper">
+                        <b class="is-visible">code.</b>
+                        <b>design.</b>
+                        <b>marketing.</b>
+                    </span>
+            </h1>
+                <h5>building apps for the web, Android phones and soon smart glasses</h5>
+            </div>
+
+            <div class="mouse">
+                <div class="scroll"></div>
+            </div>
+        </section>
+
+        <section class="box-intro2">
+            <div class="table-cell">
+                <h2><b>Check out some of my projects:</b></h2>
+            </div>
+
+            <div class="mouse">
+                <div class="scroll"></div>
+            </div>
+        </section>
+
+        
+
+        <!-- end box-intro -->
+    </div>
+    <% @project.each do |project| %>
+        <div class="card-deck">
+          <div class="card portfolio_item">
+            <center><%= image_tag project.image.url, class: "img-responsive card-img-top" %></center>
+            <div class="portfolio_item_hover">
+                <div class="portfolio-border clearfix">
+                    <div class="item_info">
+                        <span><%= link_to project.name, project %></span>
+                        <em><%= link_to project.category.name, project %></em>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+
+
+
+</body>
+
+</html>
