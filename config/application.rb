@@ -13,8 +13,3 @@ module Preisler
     # -- all .rb files in that directory are automatically loaded.
   end
 end
-
-config.assets.precompile += [
-'application.css.scss'
-'style.css'
-]
