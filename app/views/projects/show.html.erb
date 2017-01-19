@@ -15,19 +15,15 @@
 
 <!-- main-container -->
 <div class="container project-description">
-        <p><%= @project.description %></p>
+        <p><%= h(@project.description).gsub(/\n/, '<br/>').html_safe %></p>
 </div>
+<br/>
+<br/>
+<br/>
 <!-- end main-container -->
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
-
 <!-- footer -->
-<footer>
-    <div class="container-fluid">
-        <p class="copyright">© Box Portfolio 2016</p>
-    </div>
-</footer>
+<% render 'layouts/footer' %>
 <!-- end footer -->
 
 <!-- back to top -->
